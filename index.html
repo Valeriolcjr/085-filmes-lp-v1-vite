@@ -62,78 +62,28 @@
 
   <main id="top">
     <!-- HERO -->
-    <section class="hero section-dark">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow reveal-up">ESTÚDIO DE PRODUÇÃO CRIATIVA — FORTALEZA / BR</div>
+    <section class="hero-video section-dark">
+      <video
+        class="hero-video-media"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+      >
+        <source src="/SITE 085 FILMES.mp4" type="video/mp4">
+      </video>
 
-          <h1 class="hero-title">
-            <span class="line"><span>CRIAMOS</span></span>
-            <span class="line"><span>HISTÓRIAS QUE</span></span>
-            <span class="line accent-line"><span>MOVEM.</span></span>
-          </h1>
+      <div class="hero-video-overlay"></div>
 
-          <div class="hero-bottom reveal-up">
-            <p>
-              Filmes, fotografia e produção criativa para marcas
-              que querem ser vistas de um jeito diferente.
-            </p>
+      <div class="hero-video-content">
+        <p class="hero-video-eyebrow">085 FILMES — FORTALEZA / BR</p>
 
-            <div class="hero-actions">
-              <a href="#work" class="btn btn-primary magnetic">
-                VER TRABALHOS
-                <span>↗</span>
-              </a>
-              <a href="#contact" class="btn btn-ghost magnetic">
-                INICIAR UM PROJETO
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-visual hero-085-code">
-          <div class="visual-grid" aria-hidden="true"></div>
-
-          <div class="hero-code-label reveal-up">
-            <span>CÓDIGO 085</span>
-            <span>DA IDEIA À ENTREGA</span>
-          </div>
-
-          <div class="hero-digits" aria-label="085: conceito, produção e entrega">
-            <article class="hero-digit hero-digit-0">
-              <span class="digit-number">0</span>
-              <div class="digit-meta">
-                <small>01 / ORIGEM</small>
-                <strong>CONCEITO</strong>
-              </div>
-            </article>
-
-            <article class="hero-digit hero-digit-8">
-              <span class="digit-number">8</span>
-              <div class="digit-meta">
-                <small>02 / EXECUÇÃO</small>
-                <strong>PRODUÇÃO</strong>
-              </div>
-            </article>
-
-            <article class="hero-digit hero-digit-5">
-              <span class="digit-number">5</span>
-              <div class="digit-meta">
-                <small>03 / RESULTADO</small>
-                <strong>ENTREGA</strong>
-              </div>
-            </article>
-          </div>
-
-          <div class="hero-code-line" aria-hidden="true">
-            <span></span>
-          </div>
-
-          <div class="hero-coordinates">
-            <span>03°43'02"S</span>
-            <span>38°32'35"W</span>
-          </div>
-        </div>
+        <h1 class="hero-video-title">
+          TRANSFORMAMOS IDEIAS EM IMAGENS,<br>
+          HISTÓRIAS EM EXPERIÊNCIAS<br>
+          E MARCAS EM CONEXÕES.
+        </h1>
       </div>
 
       <div class="hero-scroll-indicator">
@@ -173,16 +123,9 @@
 
         <div class="about-copy">
           <p class="lead-copy">
-            A 085 transforma estratégia, conceito e direção em imagem.
-            Da primeira ideia à entrega final, construímos filmes,
-            fotografias e campanhas com intenção, estética e impacto.
-          </p>
-
-          <p class="muted-copy">
-            Nossa entrega nasce da combinação entre direção criativa,
-            produção, fotografia, movimento e pós-produção — sempre
-            conectada ao que a marca precisa fazer as pessoas sentirem,
-            lembrarem e compartilharem.
+            Transformamos ideias em imagens, histórias em experiências e marcas
+            em conexões, com um propósito claro: escalar vendas, gerar identidade
+            e construir conexões.
           </p>
 
           <a href="#services" class="text-link magnetic">
@@ -197,22 +140,18 @@
           <span>ANOS CRIANDO</span>
         </article>
         <article>
-          <strong data-counter="250">0</strong><em>+</em>
-          <span>PROJETOS</span>
+          <strong data-counter="500">0</strong><em>+</em>
+          <span>PROJETOS REALIZADOS</span>
         </article>
         <article>
-          <strong data-counter="50">0</strong><em>+</em>
-          <span>MARCAS</span>
+          <strong data-counter="70">0</strong><em>+</em>
+          <span>EMPRESAS ATENDIDAS</span>
         </article>
         <article>
-          <strong data-counter="100">0</strong><em>%</em>
-          <span>ENERGIA CRIATIVA</span>
+          <strong data-counter="99">0</strong><em>%</em>
+          <span>DAS EMPRESAS SATISFEITAS</span>
         </article>
       </div>
-
-      <p class="stats-note">
-        * Os números acima são placeholders visuais e devem ser substituídos pelos dados reais da 085.
-      </p>
     </section>
 
     <!-- WORK INTRO -->
@@ -251,12 +190,87 @@
         <div class="swiper-wrapper">
           <article class="swiper-slide project-slide project-orange">
             <div class="project-media media-01">
+              <img class="film-poster" src="./assets/optimized/posters/1_ALVESLIMA_ALL.webp" alt="Alves Lima" loading="lazy" decoding="async">
               <span class="media-tag">FILME PUBLICITÁRIO</span>
               <div class="media-number">01</div>
-              <button class="project-play">ASSISTIR ↗</button>
+              <button class="film-open" type="button" data-video="./assets/optimized/videos/1_ALVESLIMA_ALL.mp4" data-title="ALVES LIMA" aria-label="Assistir filme Alves Lima">
+                <span class="project-play film-play" aria-hidden="true">▶ ASSISTIR ↗</span>
+              </button>
             </div>
             <div class="project-meta">
-              <h4>VIA SUL</h4>
+              <h4>ALVES LIMA</h4>
+              <div>
+                <span>FILME PUBLICITÁRIO</span>
+                <span>2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="swiper-slide project-slide project-steel">
+            <div class="project-media media-02">
+              <img class="film-poster" src="./assets/optimized/posters/1_AREZZO_DIA_DAS_MAES.webp" alt="Arezzo" loading="lazy" decoding="async">
+              <span class="media-tag">FILME DE MARCA</span>
+              <div class="media-number">02</div>
+              <button class="film-open" type="button" data-video="./assets/optimized/videos/1_AREZZO_DIA_DAS_MAES.mp4" data-title="AREZZO" aria-label="Assistir filme Arezzo">
+                <span class="project-play film-play" aria-hidden="true">▶ ASSISTIR ↗</span>
+              </button>
+            </div>
+            <div class="project-meta">
+              <h4>AREZZO</h4>
+              <div>
+                <span>FILME DE MARCA</span>
+                <span>2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="swiper-slide project-slide project-grid">
+            <div class="project-media media-03">
+              <img class="film-poster" src="./assets/optimized/posters/1_IDIBRA GARDEN FATIMA.webp" alt="Idibra / Garden Fátima" loading="lazy" decoding="async">
+              <span class="media-tag">FILME PARA REDES</span>
+              <div class="media-number">03</div>
+              <button class="film-open" type="button" data-video="./assets/optimized/videos/1_IDIBRA GARDEN FATIMA.mp4" data-title="IDIBRA / GARDEN FÁTIMA" aria-label="Assistir filme Idibra / Garden Fátima">
+                <span class="project-play film-play" aria-hidden="true">▶ ASSISTIR ↗</span>
+              </button>
+            </div>
+            <div class="project-meta">
+              <h4>IDIBRA / GARDEN FÁTIMA</h4>
+              <div>
+                <span>FILME PARA REDES</span>
+                <span>2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="swiper-slide project-slide project-noise">
+            <div class="project-media media-04">
+              <img class="film-poster" src="./assets/optimized/posters/1_JC.webp" alt="JC Jewels" loading="lazy" decoding="async">
+              <span class="media-tag">EXPERIMENTAL</span>
+              <div class="media-number">04</div>
+              <button class="film-open" type="button" data-video="./assets/optimized/videos/1_JC.mp4" data-title="JC JEWELS" aria-label="Assistir filme JC Jewels">
+                <span class="project-play film-play" aria-hidden="true">▶ ASSISTIR ↗</span>
+              </button>
+            </div>
+            <div class="project-meta">
+              <h4>JC JEWELS</h4>
+              <div>
+                <span>FILME DE MARCA</span>
+                <span>2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="swiper-slide project-slide project-orange">
+            <div class="project-media media-01">
+              <img class="film-poster" src="./assets/optimized/posters/1_VIASULSHOPPING.webp" alt="Via Sul Shopping" loading="lazy" decoding="async">
+              <span class="media-tag">FILME DE CAMPANHA</span>
+              <div class="media-number">05</div>
+              <button class="film-open" type="button" data-video="./assets/optimized/videos/1_VIASULSHOPPING.mp4" data-title="VIA SUL SHOPPING" aria-label="Assistir filme Via Sul Shopping">
+                <span class="project-play film-play" aria-hidden="true">▶ ASSISTIR ↗</span>
+              </button>
+            </div>
+            <div class="project-meta">
+              <h4>VIA SUL SHOPPING</h4>
               <div>
                 <span>FILME DE CAMPANHA</span>
                 <span>2026</span>
@@ -266,14 +280,17 @@
 
           <article class="swiper-slide project-slide project-steel">
             <div class="project-media media-02">
-              <span class="media-tag">FILME DE MARCA</span>
-              <div class="media-number">02</div>
-              <button class="project-play">ASSISTIR ↗</button>
+              <img class="film-poster" src="./assets/optimized/posters/5_JEEP RENEGADE BOSCO.webp" alt="Jeep Renegade / Bosco" loading="lazy" decoding="async">
+              <span class="media-tag">FILME PUBLICITÁRIO</span>
+              <div class="media-number">06</div>
+              <button class="film-open" type="button" data-video="./assets/optimized/videos/5_JEEP RENEGADE BOSCO.mp4" data-title="JEEP RENEGADE / BOSCO" aria-label="Assistir filme Jeep Renegade / Bosco">
+                <span class="project-play film-play" aria-hidden="true">▶ ASSISTIR ↗</span>
+              </button>
             </div>
             <div class="project-meta">
-              <h4>NORMATEL</h4>
+              <h4>JEEP RENEGADE / BOSCO</h4>
               <div>
-                <span>CONTEÚDO DE MARCA</span>
+                <span>FILME PUBLICITÁRIO</span>
                 <span>2026</span>
               </div>
             </div>
@@ -281,14 +298,17 @@
 
           <article class="swiper-slide project-slide project-grid">
             <div class="project-media media-03">
-              <span class="media-tag">FILME PARA REDES</span>
-              <div class="media-number">03</div>
-              <button class="project-play">ASSISTIR ↗</button>
+              <img class="film-poster" src="./assets/optimized/posters/DIA 2 IMERSAO VORP.webp" alt="VORP" loading="lazy" decoding="async">
+              <span class="media-tag">IMERSÃO</span>
+              <div class="media-number">07</div>
+              <button class="film-open" type="button" data-video="./assets/optimized/videos/DIA 2 IMERSAO VORP.mp4" data-title="VORP" aria-label="Assistir filme VORP">
+                <span class="project-play film-play" aria-hidden="true">▶ ASSISTIR ↗</span>
+              </button>
             </div>
             <div class="project-meta">
-              <h4>PROJETO 03</h4>
+              <h4>VORP</h4>
               <div>
-                <span>CONTEÚDO AUDIOVISUAL</span>
+                <span>FILME DE MARCA</span>
                 <span>2026</span>
               </div>
             </div>
@@ -296,14 +316,143 @@
 
           <article class="swiper-slide project-slide project-noise">
             <div class="project-media media-04">
-              <span class="media-tag">EXPERIMENTAL</span>
-              <div class="media-number">04</div>
-              <button class="project-play">ASSISTIR ↗</button>
+              <img class="film-poster" src="./assets/optimized/posters/DIA DAS MAES CASA PIO.webp" alt="Casa Pio" loading="lazy" decoding="async">
+              <span class="media-tag">FILME DE CAMPANHA</span>
+              <div class="media-number">08</div>
+              <button class="film-open" type="button" data-video="./assets/optimized/videos/DIA DAS MAES CASA PIO.mp4" data-title="CASA PIO" aria-label="Assistir filme Casa Pio">
+                <span class="project-play film-play" aria-hidden="true">▶ ASSISTIR ↗</span>
+              </button>
             </div>
             <div class="project-meta">
-              <h4>PROJETO 04</h4>
+              <h4>CASA PIO</h4>
+              <div>
+                <span>FILME DE CAMPANHA</span>
+                <span>2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="swiper-slide project-slide project-orange">
+            <div class="project-media media-01">
+              <img class="film-poster" src="./assets/optimized/posters/RA&A ADVOGADOS.webp" alt="RA&amp;A Advogados" loading="lazy" decoding="async">
+              <span class="media-tag">FILME INSTITUCIONAL</span>
+              <div class="media-number">09</div>
+              <button class="film-open" type="button" data-video="./assets/optimized/videos/RA&A ADVOGADOS.mp4" data-title="RA&A ADVOGADOS" aria-label="Assistir filme RA&A Advogados">
+                <span class="project-play film-play" aria-hidden="true">▶ ASSISTIR ↗</span>
+              </button>
+            </div>
+            <div class="project-meta">
+              <h4>RA&A ADVOGADOS</h4>
+              <div>
+                <span>FILME INSTITUCIONAL</span>
+                <span>2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="swiper-slide project-slide project-steel">
+            <div class="project-media media-02">
+              <img class="film-poster" src="./assets/optimized/posters/ROTEIRO 2_HORIZONTAL.webp" alt="Normatel" loading="lazy" decoding="async">
+              <span class="media-tag">NARRATIVA VISUAL</span>
+              <div class="media-number">10</div>
+              <button class="film-open" type="button" data-video="./assets/optimized/videos/ROTEIRO 2_HORIZONTAL.mp4" data-title="NORMATEL" aria-label="Assistir filme Normatel">
+                <span class="project-play film-play" aria-hidden="true">▶ ASSISTIR ↗</span>
+              </button>
+            </div>
+            <div class="project-meta">
+              <h4>NORMATEL</h4>
               <div>
                 <span>NARRATIVA VISUAL</span>
+                <span>2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="swiper-slide project-slide project-grid">
+            <div class="project-media media-03">
+              <img class="film-poster" src="./assets/optimized/posters/v3_carlosotávio.webp" alt="Carlos Otávio" loading="lazy" decoding="async">
+              <span class="media-tag">FILME DE MARCA</span>
+              <div class="media-number">11</div>
+              <button class="film-open" type="button" data-video="./assets/optimized/videos/v3_carlosotávio.mp4" data-title="CARLOS OTÁVIO" aria-label="Assistir filme Carlos Otávio">
+                <span class="project-play film-play" aria-hidden="true">▶ ASSISTIR ↗</span>
+              </button>
+            </div>
+            <div class="project-meta">
+              <h4>CARLOS OTÁVIO</h4>
+              <div>
+                <span>FILME DE MARCA</span>
+                <span>2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="swiper-slide project-slide project-noise">
+            <div class="project-media media-04">
+              <img class="film-poster" src="./assets/optimized/posters/VIDEO 1.webp" alt="Sales Experience" loading="lazy" decoding="async">
+              <span class="media-tag">SALES EXPERIENCE</span>
+              <div class="media-number">12</div>
+              <button class="film-open" type="button" data-video="./assets/optimized/videos/VIDEO 1.mp4" data-title="SALES EXPERIENCE" aria-label="Assistir filme Sales Experience">
+                <span class="project-play film-play" aria-hidden="true">▶ ASSISTIR ↗</span>
+              </button>
+            </div>
+            <div class="project-meta">
+              <h4>SALES EXPERIENCE</h4>
+              <div>
+                <span>FILME DE MARCA</span>
+                <span>2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="swiper-slide project-slide project-orange">
+            <div class="project-media media-01">
+              <img class="film-poster" src="./assets/optimized/posters/video_depoimentocoletivo_mairaepriscila.webp" alt="Meia Sola" loading="lazy" decoding="async">
+              <span class="media-tag">DEPOIMENTO COLETIVO</span>
+              <div class="media-number">13</div>
+              <button class="film-open" type="button" data-video="./assets/optimized/videos/video_depoimentocoletivo_mairaepriscila.mp4" data-title="MEIA SOLA" aria-label="Assistir filme Meia Sola">
+                <span class="project-play film-play" aria-hidden="true">▶ ASSISTIR ↗</span>
+              </button>
+            </div>
+            <div class="project-meta">
+              <h4>MEIA SOLA</h4>
+              <div>
+                <span>CONTEÚDO AUDIOVISUAL</span>
+                <span>2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="swiper-slide project-slide project-steel">
+            <div class="project-media media-02">
+              <img class="film-poster" src="./assets/optimized/posters/1_MANDARABYYOO.webp" alt="Marquise Incorporações" loading="lazy" decoding="async">
+              <span class="media-tag">FILME DE MARCA</span>
+              <div class="media-number">14</div>
+              <button class="film-open" type="button" data-video="./assets/optimized/videos/1_MANDARABYYOO.mp4" data-title="MARQUISE INCORPORAÇÕES" aria-label="Assistir filme Marquise Incorporações">
+                <span class="project-play film-play" aria-hidden="true">▶ ASSISTIR ↗</span>
+              </button>
+            </div>
+            <div class="project-meta">
+              <h4>MARQUISE INCORPORAÇÕES</h4>
+              <div>
+                <span>FILME DE MARCA</span>
+                <span>2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="swiper-slide project-slide project-orange">
+            <div class="project-media media-01">
+              <img class="film-poster" src="./assets/optimized/posters/[Aqua Park] - Vem conhecer TODAS as atrações do Aqua Park do Beach Park.webp" alt="Beach Park" loading="lazy" decoding="async">
+              <span class="media-tag">FILME DE CAMPANHA</span>
+              <div class="media-number">15</div>
+              <button class="film-open" type="button" data-video="./assets/optimized/videos/[Aqua Park] - Vem conhecer TODAS as atrações do Aqua Park do Beach Park.mp4" data-title="BEACH PARK" aria-label="Assistir filme Beach Park">
+                <span class="project-play film-play" aria-hidden="true">▶ ASSISTIR ↗</span>
+              </button>
+            </div>
+            <div class="project-meta">
+              <h4>BEACH PARK</h4>
+              <div>
+                <span>FILME DE CAMPANHA</span>
                 <span>2026</span>
               </div>
             </div>
@@ -313,7 +462,7 @@
         <div class="carousel-progress">
           <span class="films-current">01</span>
           <div class="progress-track"><i></i></div>
-          <span>04</span>
+          <span class="films-total"></span>
         </div>
       </div>
     </section>
@@ -324,58 +473,90 @@
       <div class="section-kicker dark-kicker">NO QUE ACREDITAMOS</div>
 
       <h2 class="manifesto-title">
-        CADA IMAGEM<br>
+        CADA PROJETO<br>
         TEM UM<br>
         <span>PROPÓSITO.</span>
       </h2>
-
-      <p>
-        Não criamos para preencher espaço.
-        Criamos para fazer alguém parar.
-      </p>
     </section>
 
-    <!-- PHOTO CAROUSEL -->
+    <!-- PHOTOGRAPHY -->
     <section class="photo-section section-pad section-dark">
       <div class="carousel-heading photo-heading">
         <div>
           <span class="carousel-index">02</span>
           <h3>FOTOGRAFIA</h3>
         </div>
-
-        <div class="carousel-nav">
-          <button class="photo-prev" aria-label="Anterior">←</button>
-          <button class="photo-next" aria-label="Próximo">→</button>
-        </div>
       </div>
 
-      <div class="swiper photo-swiper cursor-drag">
-        <div class="swiper-wrapper">
-          <article class="swiper-slide photo-slide tall">
-            <div class="photo-media photo-a">
-              <span>CAMPANHA / 2026</span>
-            </div>
-          </article>
-          <article class="swiper-slide photo-slide square">
-            <div class="photo-media photo-b">
-              <span>EDITORIAL / 2026</span>
-            </div>
-          </article>
-          <article class="swiper-slide photo-slide wide">
-            <div class="photo-media photo-c">
-              <span>ESTILO DE VIDA / 2026</span>
-            </div>
-          </article>
-          <article class="swiper-slide photo-slide tall">
-            <div class="photo-media photo-d">
-              <span>PRODUTO / 2026</span>
-            </div>
-          </article>
-          <article class="swiper-slide photo-slide square">
-            <div class="photo-media photo-e">
-              <span>BASTIDORES / 2026</span>
-            </div>
-          </article>
+      <div class="photo-projects">
+        <article class="photo-project">
+          <header class="photo-project-heading">
+            <h4>QUINTAL DO NORTÃO</h4>
+            <span>FOTOGRAFIA / 2026</span>
+          </header>
+          <div class="photo-layout photo-layout--quintal">
+            <figure class="photo-item photo-media photo-a">
+              <img class="photo-image" src="./assets/optimized/images/quintal do nortao-15.webp" alt="Quintal do Nortão, fotografia 15" loading="lazy" decoding="async">
+            </figure>
+            <figure class="photo-item photo-media photo-b">
+              <img class="photo-image" src="./assets/optimized/images/quintal do nortao-40.webp" alt="Quintal do Nortão, fotografia 40" loading="lazy" decoding="async">
+            </figure>
+            <figure class="photo-item photo-media photo-c">
+              <img class="photo-image" src="./assets/optimized/images/quintal do nortao-77.webp" alt="Quintal do Nortão, fotografia 77" loading="lazy" decoding="async">
+            </figure>
+            <figure class="photo-item photo-media photo-d">
+              <img class="photo-image" src="./assets/optimized/images/quintal do nortao-103.webp" alt="Quintal do Nortão, fotografia 103" loading="lazy" decoding="async">
+            </figure>
+          </div>
+        </article>
+
+        <article class="photo-project">
+          <header class="photo-project-heading">
+            <h4>NORTH SHOPPING FORTALEZA</h4>
+            <span>FOTOGRAFIA / 2026</span>
+          </header>
+          <div class="photo-layout photo-layout--north">
+            <figure class="photo-item photo-media photo-e">
+              <img class="photo-image" src="./assets/optimized/images/NORTHSHOPPINGFORTALEZA-9.webp" alt="North Shopping Fortaleza, fotografia 9" loading="lazy" decoding="async">
+            </figure>
+            <figure class="photo-item photo-media photo-a">
+              <img class="photo-image" src="./assets/optimized/images/NORTHSHOPPINGFORTALEZA-21.webp" alt="North Shopping Fortaleza, fotografia 21" loading="lazy" decoding="async">
+            </figure>
+            <figure class="photo-item photo-media photo-b">
+              <img class="photo-image" src="./assets/optimized/images/NORTHSHOPPINGFORTALEZA-48.webp" alt="North Shopping Fortaleza, fotografia 48" loading="lazy" decoding="async">
+            </figure>
+            <figure class="photo-item photo-media photo-c">
+              <img class="photo-image" src="./assets/optimized/images/NORTHSHOPPINGFORTALEZA-84.webp" alt="North Shopping Fortaleza, fotografia 84" loading="lazy" decoding="async">
+            </figure>
+          </div>
+        </article>
+
+        <article class="photo-project">
+          <header class="photo-project-heading">
+            <h4>BARETTA</h4>
+            <span>FOTOGRAFIA / 2026</span>
+          </header>
+          <div class="photo-layout photo-layout--baretta">
+            <figure class="photo-item photo-media photo-d">
+              <img class="photo-image" src="./assets/optimized/images/baretta-019.webp" alt="Baretta, fotografia 019" loading="lazy" decoding="async">
+            </figure>
+            <figure class="photo-item photo-media photo-e">
+              <img class="photo-image" src="./assets/optimized/images/baretta-055.webp" alt="Baretta, fotografia 055" loading="lazy" decoding="async">
+            </figure>
+            <figure class="photo-item photo-media photo-a">
+              <img class="photo-image" src="./assets/optimized/images/baretta-064.webp" alt="Baretta, fotografia 064" loading="lazy" decoding="async">
+            </figure>
+            <figure class="photo-item photo-media photo-b">
+              <img class="photo-image" src="./assets/optimized/images/baretta-077.webp" alt="Baretta, fotografia 077" loading="lazy" decoding="async">
+            </figure>
+            <figure class="photo-item photo-media photo-c">
+              <img class="photo-image" src="./assets/optimized/images/baretta-116.webp" alt="Baretta, fotografia 116" loading="lazy" decoding="async">
+            </figure>
+            <figure class="photo-item photo-media photo-d">
+              <img class="photo-image" src="./assets/optimized/images/baretta-140.webp" alt="Baretta, fotografia 140" loading="lazy" decoding="async">
+            </figure>
+          </div>
+        </article>
         </div>
       </div>
     </section>
@@ -396,48 +577,32 @@
         <article class="service-item" data-service="creative">
           <span class="service-number">01</span>
           <h3>DIREÇÃO CRIATIVA</h3>
-          <p>Conceito, narrativa e direção criativa.</p>
           <span class="service-arrow">↗</span>
         </article>
 
         <article class="service-item" data-service="film">
           <span class="service-number">02</span>
-          <h3>PRODUÇÃO AUDIOVISUAL</h3>
-          <p>Filmes publicitários, institucionais e conteúdo para redes.</p>
+          <h3>FILMAGEM: CÂMERA E MOBILE</h3>
           <span class="service-arrow">↗</span>
         </article>
 
         <article class="service-item" data-service="photo">
           <span class="service-number">03</span>
           <h3>FOTOGRAFIA</h3>
-          <p>Campanhas, produto, lifestyle e institucional.</p>
           <span class="service-arrow">↗</span>
         </article>
 
-        <article class="service-item" data-service="campaign">
+        <article class="service-item" data-service="editing">
           <span class="service-number">04</span>
-          <h3>CAMPANHAS</h3>
-          <p>Conceito e produção visual de campanhas.</p>
+          <h3>EDIÇÃO: VÍDEO E FOTO</h3>
           <span class="service-arrow">↗</span>
         </article>
 
-        <article class="service-item" data-service="post">
+        <article class="service-item" data-service="animation">
           <span class="service-number">05</span>
-          <h3>PÓS-PRODUÇÃO</h3>
-          <p>Edição, tratamento de cor, animação e design de som.</p>
+          <h3>ANIMAÇÃO</h3>
           <span class="service-arrow">↗</span>
         </article>
-
-        <article class="service-item" data-service="motion">
-          <span class="service-number">06</span>
-          <h3>3D & ANIMAÇÃO</h3>
-          <p>Animação gráfica, CGI e experiências digitais.</p>
-          <span class="service-arrow">↗</span>
-        </article>
-
-        <div class="service-preview" aria-hidden="true">
-          <span>085</span>
-        </div>
       </div>
     </section>
 
@@ -457,12 +622,22 @@
             <article class="signature-digit sig-0">
               <span class="sig-number">0</span>
               <div class="sig-labels">
-                <div class="sig-label sig-label-process">
+                <div class="sig-label sig-label-stage-1">
                   <small>01</small>
                   <strong>CONCEITO</strong>
                   <p>A ideia que dá direção ao projeto.</p>
                 </div>
-                <div class="sig-label sig-label-output">
+                <div class="sig-label sig-label-stage-2">
+                  <small>01</small>
+                  <strong>ESTRATÉGIA</strong>
+                  <p>Clareza sobre o que a marca precisa comunicar.</p>
+                </div>
+                <div class="sig-label sig-label-stage-3">
+                  <small>01</small>
+                  <strong>DIREÇÃO</strong>
+                  <p>Uma linguagem visual para conduzir cada escolha.</p>
+                </div>
+                <div class="sig-label sig-label-stage-4">
                   <small>01</small>
                   <strong>FILME</strong>
                   <p>Histórias em movimento.</p>
@@ -473,12 +648,22 @@
             <article class="signature-digit sig-8">
               <span class="sig-number">8</span>
               <div class="sig-labels">
-                <div class="sig-label sig-label-process">
+                <div class="sig-label sig-label-stage-1">
                   <small>02</small>
                   <strong>PRODUÇÃO</strong>
                   <p>Onde a ideia ganha forma.</p>
                 </div>
-                <div class="sig-label sig-label-output">
+                <div class="sig-label sig-label-stage-2">
+                  <small>02</small>
+                  <strong>TÉCNICA</strong>
+                  <p>Imagem, luz e movimento trabalhando juntos.</p>
+                </div>
+                <div class="sig-label sig-label-stage-3">
+                  <small>02</small>
+                  <strong>EXECUÇÃO</strong>
+                  <p>Cada detalhe pensado para transformar conceito em imagem.</p>
+                </div>
+                <div class="sig-label sig-label-stage-4">
                   <small>02</small>
                   <strong>FOTO</strong>
                   <p>Imagens que fazem parar.</p>
@@ -489,12 +674,22 @@
             <article class="signature-digit sig-5">
               <span class="sig-number">5</span>
               <div class="sig-labels">
-                <div class="sig-label sig-label-process">
+                <div class="sig-label sig-label-stage-1">
                   <small>03</small>
                   <strong>ENTREGA</strong>
                   <p>O trabalho pronto para gerar impacto.</p>
                 </div>
-                <div class="sig-label sig-label-output">
+                <div class="sig-label sig-label-stage-2">
+                  <small>03</small>
+                  <strong>IMPACTO</strong>
+                  <p>Conteúdo pensado para permanecer na memória.</p>
+                </div>
+                <div class="sig-label sig-label-stage-3">
+                  <small>03</small>
+                  <strong>CONEXÃO</strong>
+                  <p>Imagem que aproxima marcas e pessoas.</p>
+                </div>
+                <div class="sig-label sig-label-stage-4">
                   <small>03</small>
                   <strong>CAMPANHA</strong>
                   <p>Ideias que conectam tudo.</p>
@@ -616,12 +811,12 @@
       <div class="logo-grid">
         <div>VIA SUL</div>
         <div>NORMATEL</div>
-        <div>PARCEIRO 03</div>
-        <div>PARCEIRO 04</div>
-        <div>PARCEIRO 05</div>
-        <div>PARCEIRO 06</div>
-        <div>PARCEIRO 07</div>
-        <div>PARCEIRO 08</div>
+        <div>REPUBLIC PARADISE</div>
+        <div>HOMEM DO SAPATO</div>
+        <div>BEACH PARK</div>
+        <div>NORTH SHOPPING</div>
+        <div>MARQUISE INCORPORAÇÕES</div>
+        <div>NEWSEDAN JEEP</div>
       </div>
     </section>
 
@@ -639,31 +834,26 @@
       <div class="process-list">
         <article class="process-step active">
           <span>01</span>
-          <h3>BRIEFING</h3>
+          <h3>ALINHAMENTO DO PROJETO</h3>
           <p>Entendemos a marca, o objetivo e o que a peça precisa gerar.</p>
         </article>
         <article class="process-step">
           <span>02</span>
-          <h3>IDEIA</h3>
-          <p>Transformamos estratégia em conceito, roteiro e linguagem visual.</p>
-        </article>
-        <article class="process-step">
-          <span>03</span>
           <h3>PRÉ-PRODUÇÃO</h3>
           <p>Planejamos seleção de elenco, locação, luz, cronograma e execução.</p>
         </article>
         <article class="process-step">
-          <span>04</span>
+          <span>03</span>
           <h3>CAPTAÇÃO</h3>
           <p>Direção, câmera, fotografia e produção em movimento.</p>
         </article>
         <article class="process-step">
-          <span>05</span>
+          <span>04</span>
           <h3>PÓS-PRODUÇÃO</h3>
           <p>Montagem, tratamento de cor, animação, design de som e acabamento.</p>
         </article>
         <article class="process-step">
-          <span>06</span>
+          <span>05</span>
           <h3>ENTREGA</h3>
           <p>Conteúdo final pronto para viver em todos os formatos necessários.</p>
         </article>
@@ -832,6 +1022,17 @@
         <span>PORTFÓLIO EM VÍDEO / 085</span>
         <strong>ADICIONE O VÍDEO AQUI</strong>
         <small>Substitua este bloco por um embed ou arquivo de vídeo real.</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="film-modal" id="filmModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="filmModalTitle">
+    <div class="film-modal-backdrop"></div>
+    <div class="film-modal-content">
+      <button class="film-modal-close" type="button" aria-label="Fechar vídeo">×</button>
+      <video id="filmModalVideo" controls playsinline preload="none"></video>
+      <div class="film-modal-caption">
+        <span id="filmModalTitle"></span>
       </div>
     </div>
   </div>

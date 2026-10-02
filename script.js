@@ -22,25 +22,24 @@ window.addEventListener("load", () => {
 function playHeroIntro() {
   const tl = gsap.timeline();
 
-  tl.to(".hero-title .line > span", {
-    y: 0,
-    duration: 0.95,
-    ease: "power4.out",
-    stagger: 0.11
-  })
-  .from(".hero .reveal-up", {
-    y: 26,
-    opacity: 0,
-    duration: 0.7,
-    ease: "power3.out",
-    stagger: 0.08
-  }, "-=.55")
-  .from(".hero-code-label", {
+  tl.from(".hero-video-eyebrow", {
     y: 14,
     opacity: 0,
-    duration: .55,
+    duration: 0.55,
     ease: "power3.out"
-  }, "-=.45");
+  })
+  .from(".hero-video-title", {
+    y: 35,
+    opacity: 0,
+    duration: 0.85,
+    ease: "power3.out"
+  }, "-=.2")
+  .from(".hero-video .hero-scroll-indicator", {
+    y: 12,
+    opacity: 0,
+    duration: 0.5,
+    ease: "power3.out"
+  }, "-=.35");
 }
 
 /* -------------------------
@@ -90,235 +89,6 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     });
   });
 });
-
-/* -------------------------
-   HERO — CÓDIGO 085
-------------------------- */
-
-const heroVisual =
-  document.querySelector(".hero-085-code");
-
-const heroDigits =
-  [...document.querySelectorAll(".hero-digit")];
-
-if (heroVisual && heroDigits.length) {
-
-  heroVisual.addEventListener(
-    "mousemove",
-    (event) => {
-
-      const rect =
-        heroVisual.getBoundingClientRect();
-
-      const x =
-        (event.clientX - rect.left) /
-        rect.width -
-        0.5;
-
-      const y =
-        (event.clientY - rect.top) /
-        rect.height -
-        0.5;
-
-      heroDigits.forEach(
-        (digit, index) => {
-
-          const depth =
-            (index - 1) * 6;
-
-          gsap.to(digit, {
-            x:
-              x *
-              (14 + Math.abs(depth)),
-
-            y:
-              y * 12,
-
-            rotateY:
-              x *
-              (index === 1
-                ? -7
-                : 7),
-
-            rotateX:
-              -y * 5,
-
-            duration:
-              0.6,
-
-            ease:
-              "power2.out"
-          });
-
-          const digitNumber =
-            digit.querySelector(
-              ".digit-number"
-            );
-
-          if (digitNumber) {
-
-            gsap.to(
-              digitNumber,
-              {
-                x:
-                  x *
-                  (index === 1
-                    ? 8
-                    : 14),
-
-                duration:
-                  0.6,
-
-                ease:
-                  "power2.out"
-              }
-            );
-          }
-        }
-      );
-    }
-  );
-
-  heroVisual.addEventListener(
-    "mouseleave",
-    () => {
-
-      gsap.to(heroDigits, {
-        x: 0,
-        y: 0,
-
-        rotateX: 0,
-        rotateY: 0,
-
-        duration: 0.75,
-
-        ease:
-          "power3.out"
-      });
-
-      gsap.to(
-        ".digit-number",
-        {
-          x: 0,
-
-          duration:
-            0.75,
-
-          ease:
-            "power3.out"
-        }
-      );
-    }
-  );
-}
-
-/* Entrada dos números do hero */
-
-gsap.from(".hero-digit", {
-  y: 75,
-  opacity: 0,
-  rotateX: 18,
-
-  duration:
-    1.05,
-
-  ease:
-    "power4.out",
-
-  stagger:
-    0.1,
-
-  delay:
-    1.25
-});
-
-/* Linha inferior */
-
-gsap.to(
-  ".hero-code-line span",
-  {
-    scaleX: 1.8,
-
-    scrollTrigger: {
-      trigger:
-        ".hero",
-
-      start:
-        "top top",
-
-      end:
-        "bottom top",
-
-      scrub:
-        1
-    }
-  }
-);
-
-/* Movimento individual */
-
-gsap.to(
-  ".hero-digit-0",
-  {
-    yPercent: -13,
-
-    scrollTrigger: {
-      trigger:
-        ".hero",
-
-      start:
-        "top top",
-
-      end:
-        "bottom top",
-
-      scrub:
-        1
-    }
-  }
-);
-
-gsap.to(
-  ".hero-digit-8",
-  {
-    yPercent: -24,
-
-    scrollTrigger: {
-      trigger:
-        ".hero",
-
-      start:
-        "top top",
-
-      end:
-        "bottom top",
-
-      scrub:
-        1
-    }
-  }
-);
-
-gsap.to(
-  ".hero-digit-5",
-  {
-    yPercent: -36,
-
-    scrollTrigger: {
-      trigger:
-        ".hero",
-
-      start:
-        "top top",
-
-      end:
-        "bottom top",
-
-      scrub:
-        1
-    }
-  }
-);
 
 /* -------------------------
    GENERIC REVEALS
@@ -534,6 +304,12 @@ const filmsSwiper =
                 ".films-current"
               );
 
+          const totalEl =
+            document
+              .querySelector(
+                ".films-total"
+              );
+
           const bar =
             document
               .querySelector(
@@ -545,6 +321,17 @@ const filmsSwiper =
             currentEl
               .textContent =
                 String(current)
+                  .padStart(
+                    2,
+                    "0"
+                  );
+          }
+
+          if (totalEl) {
+
+            totalEl
+              .textContent =
+                String(total)
                   .padStart(
                     2,
                     "0"
@@ -567,35 +354,28 @@ const filmsSwiper =
     }
   );
 
-/* -------------------------
-   SWIPER — FOTO
-------------------------- */
+const filmsTotal =
+  filmsSwiper.slides.length;
 
-new Swiper(
-  ".photo-swiper",
-  {
-    slidesPerView:
-      "auto",
+const filmsTotalEl =
+  document.querySelector(
+    ".films-total"
+  );
 
-    spaceBetween:
-      14,
+const filmsProgressBar =
+  document.querySelector(
+    ".films-swiper .progress-track i"
+  );
 
-    speed:
-      800,
+if (filmsTotalEl) {
+  filmsTotalEl.textContent =
+    String(filmsTotal).padStart(2, "0");
+}
 
-    grabCursor:
-      true,
-
-    navigation: {
-
-      nextEl:
-        ".photo-next",
-
-      prevEl:
-        ".photo-prev"
-    }
-  }
-);
+if (filmsProgressBar && filmsTotal > 0) {
+  filmsProgressBar.style.width =
+    `${100 / filmsTotal}%`;
+}
 
 /* -------------------------
    SWIPER — CAMPANHAS
@@ -822,131 +602,6 @@ document
   );
 
 /* -------------------------
-   SERVICE PREVIEW
-------------------------- */
-
-const serviceList =
-  document.querySelector(
-    ".service-list"
-  );
-
-const servicePreview =
-  document.querySelector(
-    ".service-preview"
-  );
-
-if (
-  serviceList &&
-  servicePreview &&
-  window
-    .matchMedia(
-      "(pointer: fine)"
-    )
-    .matches
-) {
-
-  serviceList
-    .addEventListener(
-      "mousemove",
-      (event) => {
-
-        gsap.to(
-          servicePreview,
-          {
-            left:
-              event.clientX +
-              18,
-
-            top:
-              event.clientY +
-              18,
-
-            duration:
-              .18,
-
-            ease:
-              "power2.out"
-          }
-        );
-      }
-    );
-
-  document
-    .querySelectorAll(
-      ".service-item"
-    )
-    .forEach(
-      (item) => {
-
-        item
-          .addEventListener(
-            "mouseenter",
-            () => {
-
-              servicePreview
-                .classList
-                .add(
-                  "is-visible"
-                );
-
-              const label =
-                item.dataset
-                  .service ||
-                "085";
-
-              const span =
-                servicePreview
-                  .querySelector(
-                    "span"
-                  );
-
-              if (!span) {
-                return;
-              }
-
-              span.textContent =
-
-                label ===
-                "motion"
-                  ? "3D"
-
-                : label ===
-                  "photo"
-                  ? "FOTO"
-
-                : label ===
-                  "film"
-                  ? "FILME"
-
-                : label ===
-                  "campaign"
-                  ? "AD"
-
-                : label ===
-                  "creative"
-                  ? "IDEIA"
-
-                  : "PÓS";
-            }
-          );
-
-        item
-          .addEventListener(
-            "mouseleave",
-            () => {
-
-              servicePreview
-                .classList
-                .remove(
-                  "is-visible"
-                );
-            }
-          );
-      }
-    );
-}
-
-/* -------------------------
    PROCESS ACTIVE STEP
 ------------------------- */
 
@@ -1091,7 +746,7 @@ const modal =
 
 const openButtons =
   document.querySelectorAll(
-    ".showreel-play, .project-play"
+    ".showreel-play"
   );
 
 const closeButton =
@@ -1170,6 +825,10 @@ window
 
 function closeModal() {
 
+  if (!modal?.classList.contains("is-open")) {
+    return;
+  }
+
   modal
     ?.classList
     .remove(
@@ -1190,6 +849,117 @@ function closeModal() {
 
   lenis.start();
 }
+
+/* -------------------------
+   FILMS MODAL
+------------------------- */
+
+const filmModal = document.querySelector("#filmModal");
+const filmModalVideo = document.querySelector("#filmModalVideo");
+const filmModalTitle = document.querySelector("#filmModalTitle");
+const filmModalClose = document.querySelector(".film-modal-close");
+const filmsCarousel = document.querySelector(".films-swiper");
+let activeFilmTrigger = null;
+let filmPointerStart = null;
+let suppressFilmClickUntil = 0;
+
+document.querySelectorAll(".film-poster").forEach((poster) => {
+  poster.addEventListener("error", () => {
+    poster.hidden = true;
+  }, { once: true });
+});
+
+function openFilmModal(trigger) {
+  if (!filmModal || !filmModalVideo || !trigger?.dataset.video) {
+    return;
+  }
+
+  activeFilmTrigger = trigger;
+  filmModalVideo.src = trigger.dataset.video;
+  filmModalTitle.textContent = trigger.dataset.title || "";
+  filmModalVideo.load();
+  filmModal.classList.add("is-open");
+  filmModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+  lenis.stop();
+  filmModalClose?.focus();
+}
+
+function closeFilmModal() {
+  if (!filmModal?.classList.contains("is-open") || !filmModalVideo) {
+    return;
+  }
+
+  filmModalVideo.pause();
+
+  try {
+    filmModalVideo.currentTime = 0;
+  } catch {
+    // The media may not have loaded metadata yet.
+  }
+
+  filmModalVideo.removeAttribute("src");
+  filmModalVideo.load();
+  filmModal.classList.remove("is-open");
+  filmModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+  lenis.start();
+  activeFilmTrigger?.focus({ preventScroll: true });
+  activeFilmTrigger = null;
+}
+
+filmsCarousel?.addEventListener("pointerdown", (event) => {
+  if (event.target.closest(".swiper-slide")) {
+    filmPointerStart = { x: event.clientX, y: event.clientY };
+  }
+}, true);
+
+document.addEventListener("pointerup", (event) => {
+  if (!filmPointerStart) {
+    return;
+  }
+
+  const distance = Math.hypot(
+    event.clientX - filmPointerStart.x,
+    event.clientY - filmPointerStart.y
+  );
+
+  if (distance > 8) {
+    suppressFilmClickUntil = Date.now() + 500;
+  }
+
+  filmPointerStart = null;
+});
+
+filmsCarousel?.addEventListener("click", (event) => {
+  if (event.detail !== 0 && Date.now() < suppressFilmClickUntil) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    suppressFilmClickUntil = 0;
+    return;
+  }
+
+  const slide = event.target.closest(".project-slide");
+  const trigger = event.target.closest(".film-open") || slide?.querySelector(".film-open");
+
+  if (trigger) {
+    openFilmModal(trigger);
+  }
+}, true);
+
+filmModalClose?.addEventListener("click", closeFilmModal);
+
+filmModal?.addEventListener("click", (event) => {
+  if (!event.target.closest(".film-modal-content")) {
+    closeFilmModal();
+  }
+});
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeFilmModal();
+  }
+});
 
 /* -------------------------
    ASSINATURA 085 — SCROLL STORY
@@ -1234,295 +1004,186 @@ if (
       }
     );
 
-  /*
-    ENTRADA
-    O 085 aparece como
-    um único código.
-  */
-
   signatureTl
-
     .fromTo(
       ".signature-digits",
-
       {
-        scale:
-          0.86,
-
-        rotateX:
-          7
+        scale: 0.86,
+        rotateX: 7
       },
-
       {
-        scale:
-          1,
-
-        rotateX:
-          0,
-
-        duration:
-          0.18,
-
-        ease:
-          "none"
+        scale: 1,
+        rotateX: 0,
+        duration: 0.18,
+        ease: "none"
       }
     )
-
     .to(
       ".signature-progress b",
-
       {
-        scaleX:
-          0.34,
-
-        duration:
-          0.18,
-
-        ease:
-          "none"
+        scaleX: 0.04,
+        duration: 0.12,
+        ease: "none"
       },
-
       0
     )
-
-    /*
-      OS NÚMEROS COMEÇAM
-      A GANHAR
-      INDEPENDÊNCIA
-    */
-
     .to(
       ".sig-0",
-
       {
-        xPercent:
-          -13,
-
-        rotateY:
-          -8,
-
-        rotateZ:
-          -1.3,
-
-        duration:
-          0.22,
-
-        ease:
-          "none"
+        xPercent: -13,
+        rotateY: -8,
+        rotateZ: -1.3,
+        duration: 0.22,
+        ease: "none"
       }
     )
-
     .to(
       ".sig-8",
-
       {
-        yPercent:
-          -7,
-
-        scale:
-          1.05,
-
-        duration:
-          0.22,
-
-        ease:
-          "none"
+        yPercent: -7,
+        scale: 1.05,
+        duration: 0.22,
+        ease: "none"
       },
-
       "<"
     )
-
     .to(
       ".sig-5",
-
       {
-        xPercent:
-          13,
-
-        rotateY:
-          8,
-
-        rotateZ:
-          1.3,
-
-        duration:
-          0.22,
-
-        ease:
-          "none"
+        xPercent: 13,
+        rotateY: 8,
+        rotateZ: 1.3,
+        duration: 0.22,
+        ease: "none"
       },
-
       "<"
     )
-
     .to(
-      ".signature-progress b",
-
+      ".sig-label-stage-1",
       {
-        scaleX:
-          0.62,
-
-        duration:
-          0.22,
-
-        ease:
-          "none"
-      },
-
-      "<"
-    )
-
-    /*
-      CONCEITO
-      PRODUÇÃO
-      ENTREGA
-      SAEM
-    */
-
-    .to(
-      ".sig-label-process",
-
-      {
-        opacity:
-          0,
-
-        y:
-          -18,
-
-        duration:
-          0.16,
-
-        stagger:
-          0.02,
-
-        ease:
-          "none"
+        opacity: 0,
+        y: -14,
+        duration: 0.14,
+        stagger: 0.02,
+        ease: "none"
       }
     )
-
-    /*
-      FILME
-      FOTO
-      CAMPANHA
-      ENTRAM
-    */
-
     .to(
-      ".sig-label-output",
-
+      ".sig-label-stage-2",
       {
-        opacity:
-          1,
-
-        y:
-          0,
-
-        duration:
-          0.18,
-
-        stagger:
-          0.025,
-
-        ease:
-          "none"
+        opacity: 1,
+        y: 0,
+        duration: 0.16,
+        stagger: 0.025,
+        ease: "none"
       },
-
-      "<+.03"
+      "<+.035"
     )
-
+    .to(
+      ".signature-progress b",
+      {
+        scaleX: 0.34,
+        duration: 0.16,
+        ease: "none"
+      },
+      "<"
+    )
+    .to(
+      ".sig-label-stage-2",
+      {
+        opacity: 0,
+        y: -14,
+        duration: 0.14,
+        stagger: 0.02,
+        ease: "none"
+      }
+    )
+    .to(
+      ".sig-label-stage-3",
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.16,
+        stagger: 0.025,
+        ease: "none"
+      },
+      "<+.035"
+    )
+    .to(
+      ".signature-progress b",
+      {
+        scaleX: 0.67,
+        duration: 0.16,
+        ease: "none"
+      },
+      "<"
+    )
+    .to(
+      ".sig-label-stage-3",
+      {
+        opacity: 0,
+        y: -14,
+        duration: 0.14,
+        stagger: 0.02,
+        ease: "none"
+      }
+    )
+    .to(
+      ".sig-label-stage-4",
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.18,
+        stagger: 0.025,
+        ease: "none"
+      },
+      "<+.035"
+    )
     .to(
       ".signature-word-start",
-
       {
-        opacity:
-          0,
-
-        y:
-          -8,
-
-        duration:
-          0.12,
-
-        ease:
-          "none"
+        opacity: 0,
+        y: -8,
+        duration: 0.12,
+        ease: "none"
       },
-
       "<"
     )
-
     .to(
       ".signature-word-end",
-
       {
-        opacity:
-          1,
-
-        y:
-          0,
-
-        duration:
-          0.12,
-
-        ease:
-          "none"
+        opacity: 1,
+        y: 0,
+        duration: 0.12,
+        ease: "none"
       },
-
       "<"
     )
-
     .to(
       ".signature-progress b",
-
       {
-        scaleX:
-          1,
-
-        duration:
-          0.18,
-
-        ease:
-          "none"
+        scaleX: 1,
+        duration: 0.18,
+        ease: "none"
       },
-
       "<"
     )
-
-    /*
-      FECHAMENTO
-    */
-
     .to(
       ".sig-number",
-
       {
-        scale:
-          0.93,
-
-        duration:
-          0.15,
-
-        stagger:
-          0.01,
-
-        ease:
-          "none"
+        scale: 0.93,
+        duration: 0.15,
+        stagger: 0.01,
+        ease: "none"
       }
     )
-
     .to(
       ".signature-center-mark",
-
       {
-        opacity:
-          0.075,
-
-        duration:
-          0.15,
-
-        ease:
-          "none"
+        opacity: 0.075,
+        duration: 0.15,
+        ease: "none"
       },
-
       "<"
     );
 }
